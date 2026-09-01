@@ -256,9 +256,10 @@
 
     .about { background: var(--cream-2); }
     .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; align-items: stretch; }
-    .portrait { min-height: 540px; background: var(--green); position: relative; overflow: hidden; display: grid; place-items: center; }
-    .portrait::before { content: "HG"; font: 400 clamp(150px,20vw,300px)/1 "Anton", sans-serif; color: rgba(245,240,232,.11); }
-    .portrait::after { content: "HELDER GUIMARÃES • FUNDADOR"; position: absolute; bottom: 30px; left: 30px; color: var(--cream); font: 700 11px "Archivo Narrow", sans-serif; letter-spacing: .18em; }
+    .portrait { min-height: 540px; background: var(--green); position: relative; overflow: hidden; }
+    .portrait img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center 34%; }
+    .portrait::before { content: ""; position: absolute; z-index: 1; inset: 48% 0 0; background: linear-gradient(to bottom, transparent, rgba(25,26,24,.72)); pointer-events: none; }
+    .portrait::after { content: "HELDER GUIMARÃES • FUNDADOR"; position: absolute; z-index: 2; bottom: 30px; left: 30px; color: var(--cream); font: 700 11px "Archivo Narrow", sans-serif; letter-spacing: .18em; }
     .about-copy { padding: 30px 0; align-self: center; }
     .about-copy .section-title { max-width: 700px; }
     .about-copy .lead { margin: 26px 0; max-width: 670px; }
@@ -561,7 +562,7 @@
 
     <section class="about">
       <div class="container about-grid">
-        <div class="portrait" aria-label="Identidade visual de Helder Guimarães"></div>
+        <div class="portrait"><img src="helder-guimaraes.webp" alt="Helder Guimarães, fundador da CriaNatural" width="1200" height="1200" loading="lazy"></div>
         <div class="about-copy">
           <p class="eyebrow">Quem está por trás</p>
           <h2 class="display section-title">Helder Guimarães <span class="accent">& CriaNatural.</span></h2>
